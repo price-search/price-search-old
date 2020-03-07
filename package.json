@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "cz": "git-cz",
     "ng": "ng",
     "nx": "nx",
     "start": "ng serve",
@@ -48,29 +49,49 @@
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "0.900.1",
     "@angular/cli": "9.0.1",
-    "@nrwl/workspace": "9.0.4",
-    "@types/node": "~8.9.4",
-    "dotenv": "6.2.0",
-    "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "eslint": "6.1.0",
-    "typescript": "~3.7.4",
-    "prettier": "1.18.2",
-    "@nrwl/nest": "9.0.4",
     "@angular/compiler-cli": "9.0.0",
     "@angular/language-service": "9.0.0",
-    "@angular-devkit/build-angular": "0.900.1",
-    "codelyzer": "~5.0.1",
-    "jest-preset-angular": "8.0.0",
-    "@nrwl/jest": "9.0.4",
-    "jest": "24.9.0",
-    "@types/jest": "24.9.1",
-    "ts-jest": "24.0.0",
-    "cypress": "^3.8.2",
-    "@nrwl/cypress": "9.0.4",
-    "@nrwl/node": "9.0.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@nestjs/schematics": "^6.7.0",
-    "@nestjs/testing": "^6.8.3"
+    "@nestjs/testing": "^6.8.3",
+    "@nrwl/cypress": "9.0.4",
+    "@nrwl/jest": "9.0.4",
+    "@nrwl/nest": "9.0.4",
+    "@nrwl/node": "9.0.4",
+    "@nrwl/workspace": "9.0.4",
+    "@types/jest": "24.9.1",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~5.0.1",
+    "commitizen": "^4.0.3",
+    "cypress": "^3.8.2",
+    "cz-conventional-changelog": "^3.1.0",
+    "dotenv": "6.2.0",
+    "eslint": "6.1.0",
+    "husky": "^4.2.3",
+    "jest": "24.9.0",
+    "jest-preset-angular": "8.0.0",
+    "prettier": "1.18.2",
+    "ts-jest": "24.0.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.7.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
