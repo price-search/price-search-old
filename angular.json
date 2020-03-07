@@ -19,7 +19,8 @@
             "aot": true,
             "assets": [
               "apps/price-search/src/favicon.ico",
-              "apps/price-search/src/assets"
+              "apps/price-search/src/assets",
+              "apps/price-search/src/manifest.webmanifest"
             ],
             "styles": ["apps/price-search/src/styles.css"],
             "scripts": []
@@ -51,7 +52,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/price-search/ngsw-config.json"
             }
           }
         },
