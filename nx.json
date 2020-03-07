@@ -1,0 +1,28 @@
+{
+  "npmScope": "price-search",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "price-search": {
+      "tags": []
+    },
+    "price-search-e2e": {
+      "tags": [],
+      "implicitDependencies": ["price-search"]
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
