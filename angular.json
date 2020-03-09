@@ -22,7 +22,9 @@
               "apps/price-search/src/assets",
               "apps/price-search/src/manifest.webmanifest"
             ],
-            "styles": ["apps/price-search/src/styles.css"],
+            "styles": [
+              "apps/price-search/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +85,10 @@
               "apps/price-search/tsconfig.app.json",
               "apps/price-search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/price-search/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/price-search/**"
+            ]
           }
         },
         "test": {
@@ -118,8 +123,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/price-search-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/price-search-e2e/**"]
+            "tsConfig": [
+              "apps/price-search-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/price-search-e2e/**"
+            ]
           }
         }
       }
@@ -137,7 +147,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -166,7 +178,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**"
+            ]
           }
         },
         "test": {
@@ -192,7 +207,10 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interfaces/**"
+            ]
           }
         },
         "test": {
@@ -207,7 +225,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "6f9d9365-6e88-4004-a85f-3a841c3f78d5"
   },
   "schematics": {
     "@nrwl/angular:application": {
