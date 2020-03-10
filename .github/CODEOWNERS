@@ -1,0 +1,3 @@
+* @price-search/developers
+/apps/price-search @price-search/frontend
+/apps/api @price-search/backend
