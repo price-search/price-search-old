@@ -31,4 +31,10 @@ vscode:
     - nrwl.angular-console@11.1.3:CRhVLJE38C6anNUGZjNQLA==
     - esbenp.prettier-vscode@3.20.0:37/f4uBlE287wUjENFq1aA==
     - johnpapa.Angular2@9.1.2:zMaYqbaVrWgYWYWDtzoAqw==
-    - Angular.ng-template@0.900.15:UwgNni1v/oxE+UMAOJsWZg==
+    - PKief.material-icon-theme@4.0.1:uW65d0I1ibFxFDWPtc2zkQ==
+    - dracula-theme.theme-dracula@2.20.0:3ytFGkwBUqAAYaWVrFDm3w==
+    - VisualStudioExptTeam.vscodeintellicode@1.2.6:Gl+8u7mnb+vYq2Ruvcx9/Q==
+    - eg2.vscode-npm-script@0.3.11:peDPJqeL8FmmJiabU4fAJQ==
+    - Angular.ng-template@0.900.12:3PfScC54anNZTUzYDDhzAw==
+    - ashinzekene.nestjs@1.4.0:AkD5nGSQKUH/DgLg/+4p4Q==
+    - Orta.vscode-jest@3.1.1:LQ3p9BsZrD/DSsU8zMC01g==
