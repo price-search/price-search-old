@@ -1,7 +1,22 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "priceSearch", "camelCase"],
-    "component-selector": [true, "element", "price-search", "kebab-case"]
+    "directive-selector": [
+      true,
+      "attribute",
+      "priceSearch",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "price-search",
+      "kebab-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "!**/*"
+    ]
   }
 }
