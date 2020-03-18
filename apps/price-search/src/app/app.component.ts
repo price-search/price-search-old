@@ -1,13 +1,31 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@price-search/api-interfaces';
+
+import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
 
 @Component({
   selector: 'price-search-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+export class PriceSearchComponent {
+  title = 'Sign in with Google';
+
+  user: any;
+
+  constructor(private _socioAuthServ: AuthService) {}
+
+  signIn(platform: string): void {
+    platform = GoogleLoginProvider.PROVIDER_ID;
+
+    this._socioAuthServ.signIn(platform).then(response => {
+      console.log(platform + 'logged in user data is=', response);
+
+      this.user = response;
+    });
+  }
+  signOut(): void {
+    this._socioAuthServ.signOut();
+
+    console.log('User Signed Out');
+  }
 }

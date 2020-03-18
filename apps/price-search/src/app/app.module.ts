@@ -1,15 +1,28 @@
+import { Module } from '@nestjs/common';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 import { BrowserModule } from '@angular/platform-browser';
+import { PriceSearchComponent } from './app.component';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+const google_oauth_client_id =
+  '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
+
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider(google_oauth_client_id)
+  }
+]);
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
+  declarations: [PriceSearchComponent],
+  imports: [BrowserModule, SocialLoginModule.initialize(config)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [PriceSearchComponent]
 })
 export class AppModule {}

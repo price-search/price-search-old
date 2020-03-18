@@ -1,8 +1,19 @@
-<div style="text-align:center">
-  <h1>Welcome to price-search!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
+<p>
+  {{ title }}
+</p>
+
+<button (click)="signIn('Google')">Sign in with Google</button>
+
+<br /><br />
+
+<button (click)="signOut()">Sign Out</button>
+
+<br /><br />
+
+<div *ngIf="user">
+  <img src="{{ user.photoUrl }}" />
+
+  <h4>{{ user.name }}</h4>
+
+  <p>{{ user.mail }}</p>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
