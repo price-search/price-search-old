@@ -1,12 +1,15 @@
-<p>
-  {{ title }}
-</p>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <span><mat-icon>money</mat-icon><strong> Price Search</strong></span>
 
-<button (click)="signIn('Google')">Sign in with Google</button>
+  <div class="spacer"></div>
+  <a mat-button>Home</a>
+  <a mat-button>Favorite</a>
+  <a mat-button>Item List</a>
+  <a mat-raised-button (click)="signIn('Google')">Sign in with Google</a>
+  <a mat-raised-button (click)="signOut()">Sign Out</a>
+</mat-toolbar>
 
 <br /><br />
-
-<button (click)="signOut()">Sign Out</button>
 
 <br /><br />
 
