@@ -23,6 +23,7 @@
               "apps/price-search/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "apps/price-search/src/styles.css"
             ],
             "scripts": []
