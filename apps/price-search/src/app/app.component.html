@@ -1,22 +1,41 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
-  <span><mat-icon>money</mat-icon><strong> Price Search</strong></span>
-
-  <div class="spacer"></div>
-  <a mat-button>Home</a>
-  <a mat-button>Favorite</a>
-  <a mat-button>Item List</a>
-  <a mat-raised-button (click)="signIn('Google')">Sign in with Google</a>
-  <a mat-raised-button (click)="signOut()">Sign Out</a>
-</mat-toolbar>
-
-<br /><br />
-
-<br /><br />
-
-<div *ngIf="user">
-  <img src="{{ user.photoUrl }}" />
-
-  <h4>{{ user.name }}</h4>
-
-  <p>{{ user.mail }}</p>
-</div>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [ngClass]="{ hidden: !(isHandset | async)!.matches }"
+    fixedInViewport="true"
+    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
+    [opened]="!(isHandset | async)!.matches"
+  >
+    <mat-toolbar color="white">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="favorite" routerLinkActive="active"
+        >Favorite</a
+      >
+      <a mat-list-item routerLink="product" routerLinkActive="active"
+        >Product List</a
+      >
+      <a mat-list-item href="/mapa">Map</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset | async)!.matches"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu </mat-icon>
+      </button>
+      <span>Price Search</span>
+      <span class="spacer"></span>
+      <a mat-raised-button (click)="signIn('Google')">Sign in with Google</a>
+      <a mat-raised-button (click)="signOut()">Sign Out</a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>

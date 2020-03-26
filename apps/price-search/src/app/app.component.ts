@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
-
+import { Component, Output } from '@angular/core';
+import {
+  BreakpointObserver,
+  Breakpoints,
+  BreakpointState
+} from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'price-search-root',
@@ -11,8 +17,13 @@ export class PriceSearchComponent {
   title = 'Sign in with Google';
 
   user: any;
-
-  constructor(private _socioAuthServ: AuthService) {}
+  isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(
+    Breakpoints.Handset
+  );
+  constructor(
+    private _socioAuthServ: AuthService,
+    private breakpointObserver: BreakpointObserver
+  ) {}
 
   signIn(platform: string): void {
     platform = GoogleLoginProvider.PROVIDER_ID;
